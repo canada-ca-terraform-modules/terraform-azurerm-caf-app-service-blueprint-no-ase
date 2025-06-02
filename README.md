@@ -36,5 +36,8 @@ No resources.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_appServiceTemplate-asp"></a> [appServiceTemplate-asp](#output\_appServiceTemplate-asp) | Outputs the ASP object associated with the template |
+| <a name="output_appServiceTemplate-asv"></a> [appServiceTemplate-asv](#output\_appServiceTemplate-asv) | Outputs the App services associated with the template |
 <!-- END_TF_DOCS -->
