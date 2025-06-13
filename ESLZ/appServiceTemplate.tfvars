@@ -15,16 +15,16 @@ appServiceTemplate = {
 
     appService = {
       test = {
-        resource_group                = "portal_app_service"
-        enabled                       = true
-        https_only                    = true
-        asp = "plan"
+        resource_group = "portal_app_service"
+        enabled        = true
+        https_only     = true
+        asp            = "plan"
         # public_network_access_enabled = true
         # client_affinity_enabled                        = true
         # client_certificated_enabled                    = false
         # client_certificate_mode                        = "Required"
         # client_certificate_exclusion_paths             = ["/path1", "/path2"]
-        ftp_publish_basic_authentication_enabled       = false
+        ftp_publish_basic_authentication_enabled = false
         # key_vault_reference_identity_id                = "Your Key Vault Identity ID"
         # virtual_network_subnet_id                      = "Your VNet Subnet ID"
         # webdeploy_publish_basic_authentication_enabled = true 
@@ -79,6 +79,15 @@ appServiceTemplate = {
           #   python_version           = "3.9"
           #   ruby_version             = "2.7"
           # }
+        }
+        private_endpoint = {
+          pe = {                           # Key defines the userDefinedstring
+            resource_group       = "Project" # Required: Resource group name, i.e Project, Management, DNS, etc, or the resource group ID
+            subnet               = "OZ"      # Required: Subnet name, i.e OZ,MAZ, etc, or the subnet ID
+            subresource_names    = ["sites"] # Required: Even if it's a list, only one resource is allowed for most first party Azure resource. It's a terraform requirement. See: https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview#private-link-resource for list of subresrouce
+            is_manual_connection = false     # Optional: Possible values: true, false. Default: true
+            # local_dns_zone       = "privatelink.blob.core.windows.net"    # Optional: Name of the local DNS zone for the private endpoint. To change this value, you must taint the associated resource
+          }
         }
       }
     }
