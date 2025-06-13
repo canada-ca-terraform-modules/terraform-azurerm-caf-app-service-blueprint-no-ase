@@ -12,8 +12,8 @@ No providers.
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_AppServicePlan"></a> [AppServicePlan](#module\_AppServicePlan) | github.com/canada-ca-terraform-modules/terraform-caf-azurerm-app_service_plan.git | v1.0.4 |
-| <a name="module_appServiceLinux"></a> [appServiceLinux](#module\_appServiceLinux) | github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_linux.git | v1.0.3 |
-| <a name="module_appServiceWindows"></a> [appServiceWindows](#module\_appServiceWindows) | github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_windows.git | v1.0.2 |
+| <a name="module_appServiceLinux"></a> [appServiceLinux](#module\_appServiceLinux) | github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_linux.git | v1.0.4 |
+| <a name="module_appServiceWindows"></a> [appServiceWindows](#module\_appServiceWindows) | github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_windows.git | v1.0.4 |
 
 ## Resources
 
