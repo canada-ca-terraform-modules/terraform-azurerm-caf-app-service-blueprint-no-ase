@@ -1,3 +1,63 @@
+## terraform-azurerm-caf-app-service-blueprint-no-ase
+
+Blueprint module that orchestrates App Service Plan plus Linux/Windows App Service child modules from a single ESLZ template object.
+
+## Usage
+
+### ESLZ module block (`ESLZ/appServiceTemplate.tf`)
+
+```hcl
+module "appServiceTemplate" {
+	source   = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app-service-blueprint-no-ase.git?ref=<version>"
+	for_each = var.appServiceTemplate
+
+	userDefinedString = each.key
+	location          = var.location
+	env               = var.env
+	group             = var.group
+	project           = var.project
+	resource_groups   = local.resource_groups_all
+	subnets           = local.subnets
+	appServiceTemplate = each.value
+	vnet              = local.Project-vnet
+	tags              = var.tags
+}
+```
+
+### ESLZ tfvars pattern (`ESLZ/appServiceTemplate.tfvars`)
+
+```hcl
+appServiceTemplate = {
+	template = {
+		appServicePlan = {
+			plan = {
+				resource_group = "portal_app_service"
+				os_type        = "Linux"
+				sku_name       = "B1"
+			}
+		}
+		appService = {
+			web = {
+				resource_group = "portal_app_service"
+				asp            = "plan"
+				site_config = {
+					always_on = true
+				}
+			}
+		}
+	}
+}
+```
+
+## Testing
+
+```bash
+terraform fmt -recursive
+terraform init -backend=false
+terraform validate
+terraform test
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 

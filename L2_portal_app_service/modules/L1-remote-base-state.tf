@@ -28,7 +28,7 @@ locals {
   Project-nsg              = data.terraform_remote_state.L1.outputs.Project-nsg
   Project-rsv              = try(data.terraform_remote_state.L1.outputs.Project-rsv, null)
   Project_backup_policy_vm = try(data.terraform_remote_state.L1.outputs.Project_backup_policy_vm, null)
-  Project-vnet = data.terraform_remote_state.L1.outputs.Project-vnet
+  Project-vnet             = data.terraform_remote_state.L1.outputs.Project-vnet
   Project-dns-zone         = data.terraform_remote_state.L1.outputs.private_dns_zone_ids
   zones                    = data.terraform_remote_state.L1.outputs.zones
 }
