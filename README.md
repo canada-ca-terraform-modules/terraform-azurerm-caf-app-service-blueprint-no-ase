@@ -61,7 +61,12 @@ terraform test
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9 |
+| <a name="requirement_azuread"></a> [azuread](#requirement\_azuread) | ~> 3.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 4.0 |
+| <a name="requirement_http"></a> [http](#requirement\_http) | ~> 3.0 |
 
 ## Providers
 
@@ -100,4 +105,6 @@ No resources.
 |------|-------------|
 | <a name="output_appServiceTemplate-asp"></a> [appServiceTemplate-asp](#output\_appServiceTemplate-asp) | Outputs the ASP object associated with the template |
 | <a name="output_appServiceTemplate-asv"></a> [appServiceTemplate-asv](#output\_appServiceTemplate-asv) | Outputs the App services associated with the template |
+| <a name="output_appServiceTemplate_asp"></a> [appServiceTemplate\_asp](#output\_appServiceTemplate\_asp) | Compatibility alias for appServiceTemplate-asp |
+| <a name="output_appServiceTemplate_asv"></a> [appServiceTemplate\_asv](#output\_appServiceTemplate\_asv) | Compatibility alias for appServiceTemplate-asv |
 <!-- END_TF_DOCS -->
