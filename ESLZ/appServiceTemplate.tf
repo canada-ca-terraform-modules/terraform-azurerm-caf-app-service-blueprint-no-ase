@@ -6,7 +6,7 @@ variable "appServiceTemplate" {
 
 
 module "appServiceTemplate" {
-  source = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app-service-blueprint-no-ase.git?ref=v1.0.2"
+  source = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app-service-blueprint-no-ase.git?ref=v1.1.0"
   # source = "/home/max/devops/modules/terraform-azurerm-caf-app-service-template"
   for_each = var.appServiceTemplate
 
