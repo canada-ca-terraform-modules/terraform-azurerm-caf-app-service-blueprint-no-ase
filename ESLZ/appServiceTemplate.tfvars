@@ -81,7 +81,7 @@ appServiceTemplate = {
           # }
         }
         private_endpoint = {
-          pe = {                           # Key defines the userDefinedstring
+          pe = {                             # Key defines the userDefinedstring
             resource_group       = "Project" # Required: Resource group name, i.e Project, Management, DNS, etc, or the resource group ID
             subnet               = "OZ"      # Required: Subnet name, i.e OZ,MAZ, etc, or the subnet ID
             subresource_names    = ["sites"] # Required: Even if it's a list, only one resource is allowed for most first party Azure resource. It's a terraform requirement. See: https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview#private-link-resource for list of subresrouce

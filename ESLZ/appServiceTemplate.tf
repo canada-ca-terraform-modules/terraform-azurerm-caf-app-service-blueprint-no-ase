@@ -10,14 +10,14 @@ module "appServiceTemplate" {
   # source = "/home/max/devops/modules/terraform-azurerm-caf-app-service-template"
   for_each = var.appServiceTemplate
 
-  userDefinedString = each.key
-  location = var.location
-  env = var.env
-  group = var.group
-  project = var.project
-  resource_groups = local.resource_groups_all
-  subnets = local.subnets
+  userDefinedString  = each.key
+  location           = var.location
+  env                = var.env
+  group              = var.group
+  project            = var.project
+  resource_groups    = local.resource_groups_all
+  subnets            = local.subnets
   appServiceTemplate = each.value
-  vnet = local.Project-vnet 
-  tags = var.tags
+  vnet               = local.Project-vnet
+  tags               = var.tags
 }

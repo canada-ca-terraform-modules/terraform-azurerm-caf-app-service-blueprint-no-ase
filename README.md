@@ -1,7 +1,72 @@
+## terraform-azurerm-caf-app-service-blueprint-no-ase
+
+Blueprint module that orchestrates App Service Plan plus Linux/Windows App Service child modules from a single ESLZ template object.
+
+## Usage
+
+### ESLZ module block (`ESLZ/appServiceTemplate.tf`)
+
+```hcl
+module "appServiceTemplate" {
+	source   = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app-service-blueprint-no-ase.git?ref=<version>"
+	for_each = var.appServiceTemplate
+
+	userDefinedString = each.key
+	location          = var.location
+	env               = var.env
+	group             = var.group
+	project           = var.project
+	resource_groups   = local.resource_groups_all
+	subnets           = local.subnets
+	appServiceTemplate = each.value
+	vnet              = local.Project-vnet
+	tags              = var.tags
+}
+```
+
+### ESLZ tfvars pattern (`ESLZ/appServiceTemplate.tfvars`)
+
+```hcl
+appServiceTemplate = {
+	template = {
+		appServicePlan = {
+			plan = {
+				resource_group = "portal_app_service"
+				os_type        = "Linux"
+				sku_name       = "B1"
+			}
+		}
+		appService = {
+			web = {
+				resource_group = "portal_app_service"
+				asp            = "plan"
+				site_config = {
+					always_on = true
+				}
+			}
+		}
+	}
+}
+```
+
+## Testing
+
+```bash
+terraform fmt -recursive
+terraform init -backend=false
+terraform validate
+terraform test
+```
+
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9 |
+| <a name="requirement_azuread"></a> [azuread](#requirement\_azuread) | ~> 2.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 4.0 |
+| <a name="requirement_http"></a> [http](#requirement\_http) | ~> 3.0 |
 
 ## Providers
 
@@ -40,4 +105,6 @@ No resources.
 |------|-------------|
 | <a name="output_appServiceTemplate-asp"></a> [appServiceTemplate-asp](#output\_appServiceTemplate-asp) | Outputs the ASP object associated with the template |
 | <a name="output_appServiceTemplate-asv"></a> [appServiceTemplate-asv](#output\_appServiceTemplate-asv) | Outputs the App services associated with the template |
+| <a name="output_appServiceTemplate_asp"></a> [appServiceTemplate\_asp](#output\_appServiceTemplate\_asp) | Compatibility alias for appServiceTemplate-asp |
+| <a name="output_appServiceTemplate_asv"></a> [appServiceTemplate\_asv](#output\_appServiceTemplate\_asv) | Compatibility alias for appServiceTemplate-asv |
 <!-- END_TF_DOCS -->
