@@ -34,7 +34,7 @@ appServiceTemplate = {
         # custom_hostname_binding = ["example.com"]
 
         # Optional: Uncomment and set any key value pairs
-        # app_setting = {}
+        # app_settings = {}
 
         # Required: The block can be empty but must be present
         site_config = {
