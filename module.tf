@@ -1,5 +1,5 @@
 module "AppServicePlan" {
-  source   = "github.com/canada-ca-terraform-modules/terraform-caf-azurerm-app_service_plan.git?ref=v1.0.4"
+  source   = "github.com/canada-ca-terraform-modules/terraform-caf-azurerm-app_service_plan.git?ref=v1.2.0"
   for_each = try(var.appServiceTemplate.appServicePlan, {})
 
   userDefinedString = "${var.userDefinedString}-${each.key}"
@@ -13,7 +13,7 @@ module "AppServicePlan" {
 }
 
 module "appServiceLinux" {
-  source   = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_linux.git?ref=v1.0.4"
+  source   = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_linux.git?ref=v1.2.0"
   for_each = local.appServiceLinux
 
   userDefinedString = "${var.userDefinedString}-${each.key}"
@@ -28,7 +28,7 @@ module "appServiceLinux" {
 }
 
 module "appServiceWindows" {
-  source   = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_windows.git?ref=v1.0.4"
+  source   = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_windows.git?ref=v1.1.0"
   for_each = local.appServiceWindows
 
   userDefinedString = "${var.userDefinedString}-${each.key}"

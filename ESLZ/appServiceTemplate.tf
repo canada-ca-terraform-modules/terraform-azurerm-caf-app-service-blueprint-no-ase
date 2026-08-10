@@ -6,7 +6,9 @@ variable "appServiceTemplate" {
 
 
 module "appServiceTemplate" {
-  source = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app-service-blueprint-no-ase.git?ref=v1.1.1"
+  # This ref is also read by .github/workflows/release.yml on merge to main -
+  # it must be the exact version this PR is meant to release (see CHANGELOG.md).
+  source = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app-service-blueprint-no-ase.git?ref=v1.2.0"
   # source = "/home/max/devops/modules/terraform-azurerm-caf-app-service-template"
   for_each = var.appServiceTemplate
 
