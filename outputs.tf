@@ -5,19 +5,23 @@ locals {
 output "appServiceTemplate-asp" {
   description = "Outputs the ASP object associated with the template"
   value       = local.asp_output
+  sensitive   = true
 }
 
 output "appServiceTemplate-asv" {
   description = "Outputs the App services associated with the template"
   value       = local.asv_output
+  sensitive   = true
 }
 
 output "appServiceTemplate_asp" {
   description = "Compatibility alias for appServiceTemplate-asp"
   value       = local.asp_output
+  sensitive   = true
 }
 
 output "appServiceTemplate_asv" {
   description = "Compatibility alias for appServiceTemplate-asv"
   value       = local.asv_output
+  sensitive   = true
 }
