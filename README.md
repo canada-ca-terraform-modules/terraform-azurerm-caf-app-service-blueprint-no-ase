@@ -65,7 +65,7 @@ terraform test
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9 |
 | <a name="requirement_azuread"></a> [azuread](#requirement\_azuread) | ~> 2.0 |
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 4.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 5.0 |
 | <a name="requirement_http"></a> [http](#requirement\_http) | ~> 3.0 |
 
 ## Providers
@@ -76,9 +76,9 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_AppServicePlan"></a> [AppServicePlan](#module\_AppServicePlan) | github.com/canada-ca-terraform-modules/terraform-caf-azurerm-app_service_plan.git | v1.0.4 |
-| <a name="module_appServiceLinux"></a> [appServiceLinux](#module\_appServiceLinux) | github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_linux.git | v1.0.4 |
-| <a name="module_appServiceWindows"></a> [appServiceWindows](#module\_appServiceWindows) | github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_windows.git | v1.0.4 |
+| <a name="module_AppServicePlan"></a> [AppServicePlan](#module\_AppServicePlan) | github.com/canada-ca-terraform-modules/terraform-caf-azurerm-app_service_plan.git | v1.2.0 |
+| <a name="module_appServiceLinux"></a> [appServiceLinux](#module\_appServiceLinux) | github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_linux.git | v1.2.0 |
+| <a name="module_appServiceWindows"></a> [appServiceWindows](#module\_appServiceWindows) | github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_windows.git | v1.1.0 |
 
 ## Resources
 
