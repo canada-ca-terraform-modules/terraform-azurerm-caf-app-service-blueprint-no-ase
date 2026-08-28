@@ -1,3 +1,4 @@
+# Wires up the live-test PR gate (see ../../.github/workflows/live-test.yml).
 terraform {
   required_version = ">= 1.9"
   required_providers {
