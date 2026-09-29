@@ -13,7 +13,7 @@ module "AppServicePlan" {
 }
 
 module "appServiceLinux" {
-  source   = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_linux.git?ref=v1.0.4"
+  source   = "github.com/canada-ca-terraform-modules/terraform-azurerm-caf-app_service_linux.git?ref=v1.0.4-1"
   for_each = local.appServiceLinux
 
   userDefinedString = "${var.userDefinedString}-${each.key}"
